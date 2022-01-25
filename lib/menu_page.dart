@@ -22,16 +22,19 @@ class MenuItems {
 
 class MenuPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.indigo,
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Spacer(),
-              ...MenuItems.all.map(buildMenuItem).toList(),
-              Spacer(flex: 2),
-            ],
+  Widget build(BuildContext context) => Theme(
+        data: ThemeData.dark(),
+        child: Scaffold(
+          backgroundColor: Colors.indigo,
+          body: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Spacer(),
+                ...MenuItems.all.map(buildMenuItem).toList(),
+                Spacer(flex: 2),
+              ],
+            ),
           ),
         ),
       );
