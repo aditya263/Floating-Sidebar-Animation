@@ -11,6 +11,7 @@ class HomePageState extends StatefulWidget {
 class _HomePageStateState extends State<HomePageState> {
   @override
   Widget build(BuildContext context) => ZoomDrawer(
+        style: DrawerStyle.Style1,
         menuScreen: MenuPage(),
         mainScreen: PaymentPage(),
       );
