@@ -16,11 +16,20 @@ class _HomePageStateState extends State<HomePageState> {
   @override
   Widget build(BuildContext context) => ZoomDrawer(
         style: DrawerStyle.Style1,
-        menuScreen: MenuPage(
-          currentItem: currentItem,
-          onSelectedItem: (item) {
-            setState(() => currentItem = item);
-          },
+        borderRadius: 40,
+        angle: -10,
+        slideWidth: MediaQuery.of(context).size.width * 0.8,
+        showShadow: true,
+        backgroundColor: Colors.orangeAccent,
+        menuScreen: Builder(
+          builder: (context) => MenuPage(
+            currentItem: currentItem,
+            onSelectedItem: (item) {
+              setState(() => currentItem = item);
+
+              ZoomDrawer.of(context)!.close();
+            },
+          ),
         ),
         mainScreen: getScreen(),
       );
