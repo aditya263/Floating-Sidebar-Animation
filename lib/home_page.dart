@@ -18,7 +18,7 @@ class _HomePageStateState extends State<HomePageState> {
         menuScreen: MenuPage(
           currentItem: currentItem,
           onSelectedItem: (item) {
-
+            setState(() => currentItem = item);
           },
         ),
         mainScreen: PaymentPage(),

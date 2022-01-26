@@ -54,7 +54,7 @@ class MenuPage extends StatelessWidget {
           minLeadingWidth: 20,
           leading: Icon(item.icon),
           title: Text(item.title),
-          onTap: () {},
+          onTap: () => onSelectedItem(item),
         ),
       );
 }
