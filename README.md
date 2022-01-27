@@ -1,6 +1,9 @@
-# flutter_sidebar_animation
+# Sidebar Animation & Hidden Drawer Animation
 
-A new Flutter project.
+Create a Flutter Navigation Drawer Animation that is displayed as a Sidebar Menu with animation within your Flutter app.
+
+## ✌ Preview
+![](assets/preview.gif)
 
 ## Getting Started
 
