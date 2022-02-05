@@ -5,7 +5,7 @@ Create a Flutter Navigation Drawer Animation that is displayed as a Sidebar Menu
 ## ✌ Preview
 ![](assets/demo.gif)
 
-## Getting Started
+## Getting Started 📕
 
 This project is a starting point for a Flutter application.
 
