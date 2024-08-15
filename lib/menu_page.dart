@@ -30,31 +30,64 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Theme(
-        data: ThemeData.dark(),
-        child: Scaffold(
-          backgroundColor: Colors.indigo,
-          body: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Spacer(),
-                ...MenuItems.all.map(buildMenuItem).toList(),
-                const Spacer(flex: 2),
-              ],
+    data: ThemeData.dark(),
+    child: Scaffold(
+      backgroundColor: Colors.indigo,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 60,
+                    backgroundImage: AssetImage('assets/images/logo.png'),
+                  ),
+                  SizedBox(height: 16),
+                  // Profile Name
+                  Text(
+                    'Coding by Aditya',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
+            ...MenuItems.all.map(buildMenuItem).toList(),
+            const Spacer(flex: 1),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListTile(
+                leading: const Icon(Icons.logout, color: Colors.white),
+                title: const Text(
+                  'Logout',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  // Handle logout action
+                },
+              ),
+            ),
+          ],
         ),
-      );
+      ),
+    ),
+  );
 
   Widget buildMenuItem(MenuItem item) => ListTileTheme(
-        selectedColor: Colors.white,
-        child: ListTile(
-          selectedTileColor: Colors.black26,
-          selected: currentItem == item,
-          minLeadingWidth: 20,
-          leading: Icon(item.icon),
-          title: Text(item.title),
-          onTap: () => onSelectedItem(item),
-        ),
-      );
+    selectedColor: Colors.white,
+    child: ListTile(
+      selectedTileColor: Colors.black26,
+      selected: currentItem == item,
+      minLeadingWidth: 20,
+      leading: Icon(item.icon),
+      title: Text(item.title),
+      onTap: () => onSelectedItem(item),
+    ),
+  );
 }

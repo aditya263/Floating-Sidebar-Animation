@@ -6,6 +6,8 @@ import 'package:flutter_sidebar_animation/promo_page.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class HomePageState extends StatefulWidget {
+  const HomePageState({Key? key}) : super(key: key);
+
   @override
   State<HomePageState> createState() => _HomePageStateState();
 }
@@ -37,13 +39,13 @@ class _HomePageStateState extends State<HomePageState> {
   Widget getScreen() {
     switch (currentItem) {
       case MenuItems.payment:
-        return PaymentPage();
+        return const PaymentPage();
 
       case MenuItems.promos:
-        return PromoPage();
+        return const PromoPage();
 
       default:
-        return PaymentPage();
+        return const PaymentPage();
     }
   }
 }
